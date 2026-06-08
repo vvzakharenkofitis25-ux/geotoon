@@ -1,0 +1,586 @@
+/* =============================================
+   GeoToon – Shared Stylesheet
+   ============================================= */
+
+/* GOOGLE FONTS imported in HTML via <link> */
+
+:root {
+  --purple: #b07fd4;
+  --purple-light: #d4a8f0;
+  --purple-mid: #c490e0;
+  --bg: #c9a8e8;
+  --card-bg: #f3e6ff;
+  --white: #ffffff;
+  --text-dark: #2d1b4e;
+  --text-mid: #4a3068;
+  --green-btn: #6dbf67;
+  --green-dark: #4da849;
+  --yellow: #f5c842;
+  --nav-bg: #ede0f8;
+  --shadow: 0 4px 18px rgba(120,60,180,0.13);
+  --radius: 18px;
+}
+
+/* ── RESET ── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--nav-bg);
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  height: 64px;
+  gap: 24px;
+  border-bottom: 2px solid var(--purple-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.nav-logo img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--text-dark); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--nav-bg);
+  border-top: 2px solid var(--purple-light);
+  padding: 16px 40px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-mid);
+  margin-top: auto;
+}
+
+footer a {
+  color: var(--text-mid);
+  text-decoration: underline;
+}
+
+/* ── SHARED BUTTON ── */
+.btn-green {
+  background: var(--green-btn);
+  color: var(--white);
+  border: none;
+  border-radius: 40px;
+  padding: 12px 28px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(80,180,80,0.25);
+  transition: background 0.2s, transform 0.15s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-green:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+/* ── SHARED MOON BANNER ── */
+.moon-banner {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  height: 180px;
+  background: #e8d5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.moon-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+
+/* =============================================
+   PARENTS PAGE
+   ============================================= */
+
+.parents-main {
+  flex: 1;
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.18s;
+}
+
+.sidebar-card:hover { transform: translateY(-3px); }
+
+.sidebar-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.sidebar-card-label {
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--text-dark);
+  line-height: 1.3;
+  background: var(--card-bg);
+}
+
+/* Hero card */
+.hero-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  box-shadow: var(--shadow);
+}
+
+.hero-card h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.55rem;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.hero-card p {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.hero-card h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.btn-row { display: flex; gap: 16px; }
+
+/* Parents info card */
+.parents-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  box-shadow: var(--shadow);
+}
+
+.parents-card h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.parents-card p {
+  font-size: 0.93rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+/* Benefits card */
+.benefits-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  box-shadow: var(--shadow);
+  grid-column: 2;
+}
+
+.benefits-card h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.55;
+}
+
+.benefits-list li::before {
+  content: '';
+  min-width: 22px;
+  height: 22px;
+  background: var(--green-btn);
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.parents-moon {
+  grid-column: 2;
+}
+
+
+/* =============================================
+   COUNTRY PAGE
+   ============================================= */
+
+.country-main {
+  flex: 1;
+  max-width: 700px;
+  margin: 36px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.country-title-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 22px 32px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.country-title-card h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  color: var(--text-dark);
+}
+
+.country-flag {
+  height: 62px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+}
+
+.hero-img-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.hero-img-card .character-overlay {
+  position: absolute;
+  bottom: -10px;
+  left: 18px;
+  height: 180px;
+  z-index: 2;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+}
+
+.hero-img-card img.bg-photo {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.info-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  box-shadow: var(--shadow);
+}
+
+.info-card p {
+  font-size: 0.97rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+.play-btn-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-green-lg {
+  background: var(--green-btn);
+  color: var(--white);
+  border: none;
+  border-radius: 40px;
+  padding: 16px 52px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(80,180,80,0.3);
+  transition: background 0.2s, transform 0.15s;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 0.02em;
+}
+
+.btn-green-lg:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+
+/* =============================================
+   MAP PAGE
+   ============================================= */
+
+.map-main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.heading-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 22px 32px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.heading-card h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.6rem;
+  color: var(--text-dark);
+}
+
+.map-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.map-card img.world-map {
+  width: 100%;
+  display: block;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.speech-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 22px 32px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.speech-card img {
+  height: 110px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,0.15));
+}
+
+.speech-card p {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  font-weight: 600;
+}
+
+
+@media screen and (max-width: 1024px) {
+   
+    nav {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    
+    .parents-main {
+        display: flex;
+        flex-direction: column; 
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .parents-main .sidebar {
+        width: 100%; 
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between;
+        gap: 15px;
+        overflow-x: auto; 
+    }
+
+    .sidebar-card {
+        flex: 1;
+        min-width: 200px;
+    }
+
+   
+    .hero-card, .parents-card, .benefits-card {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+   
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .parents-main .sidebar {
+        flex-direction: column;
+        order: 2; 
+    }
+    
+    .hero-card {
+        order: 1; 
+    }
+
+  
+    .map-card img.world-map {
+        width: 100%;
+        height: auto; 
+    }
+
+    .speech-card {
+        flex-direction: column; 
+        text-align: center;
+        align-items: center;
+    }
+
+  
+    .hero-img-card {
+        position: relative;
+        width: 100%;
+    }
+    
+    .bg-photo {
+        width: 100%;
+        height: auto;
+    }
+
+    .character-overlay {
+        width: 40%; /
+    }
+    
+    .btn-row {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-green, .btn-green-lg {
+        display: block;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    
+    h1 {
+        font-size: 24px !important;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 20px !important;
+    }
+
+    p, li {
+        font-size: 15px !important;
+        line-height: 1.4;
+    }
+
+    
+    footer {
+        font-size: 12px;
+        padding: 15px 10px;
+    }
+
+    
+    .moon-banner img {
+        width: 100%;
+        height: auto;
+    }
+}
